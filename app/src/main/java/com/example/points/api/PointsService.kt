@@ -11,6 +11,7 @@ import retrofit2.http.Query
 interface PointsService {
     @GET("api/test/points")
     fun getPoints(@Query("count") query: String): LiveData<ApiResponse<GetPointsResponse>>
+
     @GET("api/test/points")
     fun getPoints(@Query("count") query: String, @Query("page") page: Int): Call<GetPointsResponse>
 }

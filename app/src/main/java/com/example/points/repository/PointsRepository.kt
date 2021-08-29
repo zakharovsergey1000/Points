@@ -29,10 +29,8 @@ class PointsRepository @Inject constructor(
     private val pointsService: PointsService
 ) {
 
-
     fun loadPoints(owner: String): LiveData<List<Point>> {
         return pointDao.loadPoints(owner)
-
     }
 
     private fun addPoints(points: List<Point>): List<Point> {
@@ -41,10 +39,8 @@ class PointsRepository @Inject constructor(
         for (i in 0..count step 999) {
             val ids = pointDao.insertPoints(points.subList(i, Math.min(i + 999, count) ))
             list.addAll(pointDao.getPointsFromRowids(ids))
-            }
+        }
         return list
-
-
     }
 
     fun search(query: String): LiveData<Resource<List<Point>>> {
@@ -56,13 +52,13 @@ class PointsRepository @Inject constructor(
                 db.runInTransaction {
                     pointDao.deletePoints(count.toString())
                     item.items = addPoints(item.items)
-                val repoIds = item.items.map { it.id }
+                    val repoIds = item.items.map { it.id }
                     val repoSearchResult = PointSearchResult(
-                    query = query,
-                    repoIds = repoIds,
-                    totalCount = item.total,
-                    next = item.nextPage
-                )
+                        query = query,
+                        repoIds = repoIds,
+                        totalCount = item.total,
+                        next = item.nextPage
+                    )
                     pointDao.insert(repoSearchResult)
                 }
             }

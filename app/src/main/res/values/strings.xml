@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Graph</string>
+    <string name="retry">Retry</string>
+    <string name="go">Поехали</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">input points number</string>
+    <string name="save_to_picture">Save to picture</string>
+    <string name="toggle_basic_cubic">Toggle basic or cubic</string>
+    <string name="line_data_set_mode_key">LineDataSetMode</string>
+</resources>

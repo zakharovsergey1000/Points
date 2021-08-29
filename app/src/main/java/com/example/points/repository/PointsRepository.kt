@@ -7,6 +7,7 @@ import com.example.points.api.GetPointsResponse
 import com.example.points.api.PointsService
 import com.example.points.db.PointDao
 import com.example.points.db.PointsDb
+import com.example.points.testing.OpenForTesting
 import com.example.points.vo.Point
 import com.example.points.vo.PointSearchResult
 import com.example.points.vo.Resource
@@ -20,7 +21,7 @@ import javax.inject.Singleton
  * Repository - type of this class.
  */
 @Singleton
-//@OpenForTesting
+@OpenForTesting
 class PointsRepository @Inject constructor(
     private val appExecutors: AppExecutors,
     private val db: PointsDb,

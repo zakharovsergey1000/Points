@@ -7,7 +7,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-//import com.example.graph.testing.OpenForTesting
+import com.example.points.testing.OpenForTesting
 import com.example.points.vo.Point
 import com.example.points.vo.PointSearchResult
 
@@ -15,7 +15,7 @@ import com.example.points.vo.PointSearchResult
  * Interface for database access on Point related operations.
  */
 @Dao
-//@OpenForTesting
+@OpenForTesting
 abstract class PointDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)

@@ -41,6 +41,7 @@ abstract class PointDao {
         WHERE count = :count"""
     )
     abstract fun deletePoints(count: String)
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     abstract fun insert(result: PointSearchResult)
 

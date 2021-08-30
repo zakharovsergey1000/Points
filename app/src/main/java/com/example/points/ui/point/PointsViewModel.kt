@@ -5,12 +5,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.example.points.repository.PointsRepository
+import com.example.points.testing.OpenForTesting
 import com.example.points.util.AbsentLiveData
 import com.example.points.vo.Point
 import com.github.mikephil.charting.data.LineDataSet
 import javax.inject.Inject
 
-//@OpenForTesting
+@OpenForTesting
 class PointsViewModel @Inject constructor(repository: PointsRepository) : ViewModel() {
     lateinit var dataSet: LineDataSet
     var listResource: List<Point>? = null

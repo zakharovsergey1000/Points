@@ -1,17 +1,21 @@
 package com.example.points.ui.search
 
-import androidx.lifecycle.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.switchMap
 import com.example.points.repository.PointsRepository
+import com.example.points.testing.OpenForTesting
 import com.example.points.util.AbsentLiveData
 import com.example.points.vo.Point
 import com.example.points.vo.Resource
 import com.example.points.vo.Status
 import com.hadilq.liveevent.LiveEvent
-import java.util.*
+import java.util.Locale
 import javax.inject.Inject
 
-//@OpenForTesting
+@OpenForTesting
 class SearchViewModel @Inject constructor(pointsRepository: PointsRepository) : ViewModel() {
 
     private val _query = MutableLiveData<String>()
@@ -39,7 +43,6 @@ class SearchViewModel @Inject constructor(pointsRepository: PointsRepository) : 
         nextPageHandler.reset()
         _query.value = input
     }
-
 
     fun refresh() {
         _query.value?.let {
@@ -70,7 +73,6 @@ class SearchViewModel @Inject constructor(pointsRepository: PointsRepository) : 
 
         init {
             reset()
-
         }
 
         override fun onChanged(result: Resource<Boolean>?) {

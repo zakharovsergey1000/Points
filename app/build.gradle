@@ -52,7 +52,6 @@ repositories {
 }
 
 dependencies {
-
     implementation deps.appcompat
     implementation deps.material
     implementation deps.core_ktx

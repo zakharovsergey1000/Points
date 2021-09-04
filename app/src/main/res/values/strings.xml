@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Graph</string>
+    <string name="app_name">Points</string>
     <string name="retry">Retry</string>
     <string name="go">Поехали</string>
     <string name="unknown_error">Unknown Error</string>

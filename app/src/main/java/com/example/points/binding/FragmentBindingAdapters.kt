@@ -19,4 +19,3 @@ class FragmentBindingAdapters @Inject constructor(val fragment: Fragment) {
         Glide.with(fragment).load(url).listener(listener).into(imageView)
     }
 }
-
